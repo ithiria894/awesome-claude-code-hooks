@@ -42,7 +42,7 @@ Hooks that prevent Claude Code from making unwanted changes.
 
 - [wangbooth/Claude-Code-Guardrails](https://github.com/wangbooth/Claude-Code-Guardrails) - Protective hooks that prevent accidental code loss through branch protection, automatic checkpointing, and safe commit squashing. 51 stars. Triggers on: `PreToolUse`, `PostToolUse`.
 - [gstack freeze/guard](https://github.com/garrytan/gstack) - Lock critical files from modification. Uses `PreToolUse` hook definitions in SKILL.md frontmatter (not hooks.json) with real shell scripts (`freeze/bin/check-freeze.sh`). Note: only enforced in Claude Code — generated Codex skill docs are advisory prose only. Found in `freeze/SKILL.md.tmpl` and `guard/SKILL.md.tmpl`. Triggers on: `PreToolUse` (Write/Edit).
-- [Everything Claude Code hook profiles](https://github.com/nicholasareed/everything-claude-code) - 26 hook entries across 7 event groups with 27 hook scripts. Three preset safety levels: minimal, standard, strict. Codex-verified counts: 116 skills, 28 agents, 59 commands. Triggers on: `PreToolUse`, `PostToolUse`, and 5 other event types.
+- [Everything Claude Code hook profiles](https://github.com/affaan-m/everything-claude-code) - 26 hook entries across 7 event groups with 27 hook scripts. Three preset safety levels: minimal, standard, strict. Codex-verified counts: 116 skills, 28 agents, 59 commands. Triggers on: `PreToolUse`, `PostToolUse`, and 5 other event types.
 - [Pre-commit hook guard](https://github.com/anthropics/claude-code/tree/main/hooks) - Official example: block commits that skip pre-commit hooks (prevents `--no-verify`). Triggers on: `PreToolUse` (Bash).
 
 ## Monitoring and Observability
@@ -57,7 +57,7 @@ Hooks that track and visualize Claude Code activity in real-time.
 
 Hooks that enforce code quality standards automatically.
 
-- [Auto-lint on save](https://github.com/nicholasareed/everything-claude-code) - Run linter after every file write. Reject changes that introduce lint errors. Found in `hooks/hooks.json`. Triggers on: `PostToolUse` (Write/Edit).
+- [Auto-lint on save](https://github.com/affaan-m/everything-claude-code) - Run linter after every file write. Reject changes that introduce lint errors. Found in `hooks/hooks.json`. Triggers on: `PostToolUse` (Write/Edit).
 - [Claude Organize](https://github.com/ramakay/claude-organizer) - AI-powered file organization hook that automatically sorts temporary scripts from permanent docs. Understands content, not just patterns. 61 stars. Triggers on: `PostToolUse` (Write/Edit).
 
 ## Context and Memory
@@ -66,8 +66,8 @@ Hooks that manage what Claude knows across sessions and compactions.
 
 - [post_compact_reminder](https://github.com/Dicklesworthstone/post_compact_reminder) - Detects context compaction and injects a reminder to re-read AGENTS.md, preventing post-compaction rule amnesia in long sessions. 34 stars. Triggers on: `PostCompact`.
 - [Continuous Claude v3](https://github.com/parcadei/Continuous-Claude-v3) - Context management via hooks that maintain state through ledgers and handoffs. MCP execution without context pollution. Agent orchestration with isolated context windows. 3,619 stars. Triggers on: multiple lifecycle hooks.
-- [Memory injection hook](https://github.com/nicholasareed/everything-claude-code) - Inject alerts, briefings, and relevant memories before each message. Scans memory files and surfaces the most relevant context. Found in `hooks/hooks.json`. Triggers on: pre-message.
-- [Founder OS institutional memory](https://github.com/danielraffel/founder-os) - Accumulates learnings from task completions into `.claude/learnings/`. Future sessions automatically reference past lessons. Triggers on: task completion.
+- [Memory injection hook](https://github.com/affaan-m/everything-claude-code) - Inject alerts, briefings, and relevant memories before each message. Scans memory files and surfaces the most relevant context. Found in `hooks/hooks.json`. Triggers on: pre-message.
+- [Founder OS institutional memory](https://github.com/cloudrepo-io/founder-os) - Accumulates learnings from task completions into `.claude/learnings/`. Future sessions automatically reference past lessons. Triggers on: task completion.
 
 ## Model Routing and Cost
 
@@ -80,8 +80,8 @@ Hooks that optimize model selection and track spending.
 
 Hooks that manage Claude Code session state.
 
-- [Everything Claude Code session persistence](https://github.com/nicholasareed/everything-claude-code) - Save and restore session context across restarts. Auto-dumps important state on session end, reloads on next start. Triggers on: `Stop`, session start.
-- [Superpowers session-start](https://github.com/jasonm/superpowers) - Auto-load project context and active tasks when starting a new session. Found in `hooks/hooks.json`. Triggers on: session start.
+- [Everything Claude Code session persistence](https://github.com/affaan-m/everything-claude-code) - Save and restore session context across restarts. Auto-dumps important state on session end, reloads on next start. Triggers on: `Stop`, session start.
+- [Superpowers session-start](https://github.com/obra/superpowers) - Auto-load project context and active tasks when starting a new session. Found in `hooks/hooks.json`. Triggers on: session start.
 
 ## File Organization
 
@@ -96,7 +96,7 @@ Hooks that notify you about Claude Code activity.
 - [claude-code-toast](https://github.com/eyalzh/claude-code-toast) - macOS toast notification when Claude Code is waiting for user response. 16 stars. Triggers on: `Notification`.
 - [aily](https://github.com/jiunbae/aily) - Discord notifications with per-tmux-session threads. Each Claude session gets its own Discord thread. 6 stars. Triggers on: `Notification`, `Stop`.
 - [Desktop notification on complete](https://github.com/anthropics/claude-code/tree/main/hooks) - Official example: send system notification when a long-running task completes. Triggers on: `Stop`.
-- [Solopreneur decision logger](https://github.com/codeislaw1993/solopreneur-plugin) - Auto-logs every user decision with reasoning when Claude asks a question. Creates an observer protocol for future reference. Triggers on: `PostToolUse` (AskUserQuestion).
+- [Solopreneur decision logger](https://github.com/pcatattacks/solopreneur-plugin) - Auto-logs every user decision with reasoning when Claude asks a question. Creates an observer protocol for future reference. Triggers on: `PostToolUse` (AskUserQuestion).
 
 ## Voice and Sound
 
@@ -110,8 +110,8 @@ Hooks that add audio feedback to Claude Code events.
 Hooks that connect Claude Code actions to git operations.
 
 - [GitButler Claude Code hooks](https://docs.gitbutler.com/features/ai-integration/claude-code-hooks) - Official GitButler integration: PreToolUse creates session-specific git index, PostToolUse stages files, Stop commits to per-session branch under `refs/heads/claude/`. Enables parallel sessions with isolated branches. By Scott Chacon. Triggers on: `PreToolUse`, `PostToolUse`, `Stop`.
-- [Auto-checkpoint on skill completion](https://github.com/codeislaw1993/solopreneur-plugin) - Automatically creates a git commit after every skill finishes running. Ensures you can always roll back. Triggers on: skill completion.
-- [Branch-per-task pattern](https://github.com/danielraffel/founder-os) - Auto-create a new branch when starting a task from the queue. Isolates work for clean PR creation. Triggers on: task start.
+- [Auto-checkpoint on skill completion](https://github.com/pcatattacks/solopreneur-plugin) - Automatically creates a git commit after every skill finishes running. Ensures you can always roll back. Triggers on: skill completion.
+- [Branch-per-task pattern](https://github.com/cloudrepo-io/founder-os) - Auto-create a new branch when starting a task from the queue. Isolates work for clean PR creation. Triggers on: task start.
 
 ## Hook SDKs and Frameworks
 
