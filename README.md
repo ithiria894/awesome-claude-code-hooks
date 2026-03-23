@@ -41,7 +41,7 @@ Hooks that detect and block prompt injection attacks in tool outputs.
 Hooks that prevent Claude Code from making unwanted changes.
 
 - [wangbooth/Claude-Code-Guardrails](https://github.com/wangbooth/Claude-Code-Guardrails) - Protective hooks that prevent accidental code loss through branch protection, automatic checkpointing, and safe commit squashing. 51 stars. Triggers on: `PreToolUse`, `PostToolUse`.
-- [gstack freeze/guard](https://github.com/garrytan/gstack) - Lock critical files from modification. `/freeze` marks files, hook blocks any write attempts during session. Found in `skills/freeze/` and `skills/guard/`. Triggers on: `PreToolUse` (Write/Edit).
+- [gstack freeze/guard](https://github.com/garrytan/gstack) - Lock critical files from modification. Uses `PreToolUse` hook definitions in SKILL.md frontmatter (not hooks.json) with real shell scripts (`freeze/bin/check-freeze.sh`). Note: only enforced in Claude Code — generated Codex skill docs are advisory prose only. Found in `freeze/SKILL.md.tmpl` and `guard/SKILL.md.tmpl`. Triggers on: `PreToolUse` (Write/Edit).
 - [Everything Claude Code hook profiles](https://github.com/nicholasareed/everything-claude-code) - Three preset safety levels: minimal (fast, fewer checks), standard (balanced), strict (maximum safety, slower). Switch profiles per session. Found in `hooks/hooks.json`. Triggers on: `PreToolUse`, `PostToolUse`.
 - [Pre-commit hook guard](https://github.com/anthropics/claude-code/tree/main/hooks) - Official example: block commits that skip pre-commit hooks (prevents `--no-verify`). Triggers on: `PreToolUse` (Bash).
 
