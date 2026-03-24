@@ -35,6 +35,8 @@ Hooks that detect and block prompt injection attacks in tool outputs.
 - [CloneGuard](https://github.com/prodnull/cloneguard) - 4-layer defense: pre-execution repo scan, InstructionsLoaded hook, PostToolUse output scanning, PreToolUse write/build gating. Uses ONNX embedding classifier (non-promptable) instead of LLM for detection. Works with Claude Code, Gemini CLI, Cursor. Triggers on: `PreToolUse`, `PostToolUse`, `InstructionsLoaded`.
 - [claude-injection-guard](https://github.com/michaelhannecke/claude-injection-guard) - Two-stage prompt injection guard: Stage 1 is regex (zero deps, sub-ms), Stage 2 escalates to local LLM (Ollama/LM Studio). Zero data leaves your machine. Triggers on: `PostToolUse` (WebFetch).
 - [rulebricks/claude-code-guardrails](https://github.com/rulebricks/claude-code-guardrails) - Real-time guardrails for Claude Code tool calls. 61 stars. Triggers on: `PreToolUse`, `PostToolUse`.
+- [panuhorsmalahti/claude-code-permissions-hook](https://github.com/panuhorsmalahti/claude-code-permissions-hook) - Rust-based granular permission controls via TOML config. Allow/deny rules with regex pattern matching, exclude patterns for edge cases, and JSON audit logging. Workaround for current Claude Code permission limitations. Triggers on: `PreToolUse`.
+- [liberzon/claude-hooks](https://github.com/liberzon/claude-hooks) - Smart PreToolUse hook that decomposes compound bash commands (`&&`, `||`, `;`, `|`, `$()`, newlines) into individual sub-commands and checks each against your allow/deny patterns. Loads permissions from all settings layers (global + project + local). Triggers on: `PreToolUse` (Bash).
 
 ## Safety and Protection
 
@@ -129,6 +131,9 @@ Tools for building and managing hooks in different languages.
 Repos that bundle multiple hooks together.
 
 - [karanb192/claude-code-hooks](https://github.com/karanb192/claude-code-hooks) - 10-hook collection: cost-tracker, rate-limiter, branch-guard, protect-tests, context-snapshot, ntfy-notify, discord-notify, tts-alerts, rules-injector, session-summary. Copy-paste ready. 298 stars.
+- [Aedelon/claude-code-blueprint](https://github.com/Aedelon/claude-code-blueprint) - 11 hooks covering 9 of 17 lifecycle events: session-start, session-end, user-prompt-secrets, bash-guard, write-format, bash-vuln (npm audit), posttooluse-failure logging, stop (git summary), pre-compact (context preservation), and permission-git warnings. All scripts start with `set -euo pipefail` + `trap ERR` for fail-closed behavior.
+- [decider/claude-hooks](https://github.com/decider/claude-hooks) - Comprehensive hooks for enforcing clean code practices and automating workflows. Covers formatting, linting, and code quality gates.
+- [JalelTounsi/claude-code-skills](https://github.com/JalelTounsi/claude-code-skills) - 30 hooks including 6 mandatory security hooks: pre-commit secret scanning (25+ patterns), destructive command blocking (`rm -rf /`, `DROP DATABASE`, `chmod 777`), and progressive adoption tiers. Part of a 138-skill collection.
 
 ## Creative and Utility
 
@@ -144,6 +149,11 @@ Guides and tutorials for writing hooks.
 - [95-hook production infrastructure](https://blakecrosley.com/blog/claude-code-hooks) - Blog documenting 95 production hooks across 4 layers: Prevention (PreToolUse), Context (UserPromptSubmit), Validation (PostToolUse), Quality (Stop). Includes recursion-guard, circuit-breaker, and pride-check.
 - [Claude Code official hooks docs](https://docs.anthropic.com/en/docs/claude-code/hooks) - Official documentation covering all hook events, configuration, and best practices.
 - [gstack hooks patterns](https://github.com/garrytan/gstack) - Production hooks for file protection (freeze/guard) used by a YC partner.
+- [Claude Directory hooks guide](https://www.claudedirectory.org/blog/claude-code-hooks-guide) - Complete guide with layered pipeline config combining prevention (PreToolUse), enforcement (PostToolUse), and notification (Stop) hooks into a production-ready setup.
+- [Blake Crosley hooks tutorial](https://blakecrosley.com/blog/claude-code-hooks-tutorial) - Step-by-step tutorial building 5 production hooks from scratch: auto-formatter, security gate, test runner, notification alert, and pre-commit quality check. By the author of the 95-hook production infrastructure.
+- [12 Automation Configs (heyuan110)](https://www.heyuan110.com/posts/ai/2026-02-28-claude-code-hooks-guide/) - 12 copy-paste-ready hook configs covering all 15 lifecycle events. Includes Prettier auto-format, file protection, command blocking, and team-sharing patterns.
+- [Serenities AI hooks guide](https://serenitiesai.com/articles/claude-code-hooks-guide-2026) - Covers all 18 hook events including newer ones (ConfigChange, WorktreeCreate, WorktreeRemove). Introduces HTTP hook type for remote webhook integration.
+- [Agent Rules Builder — 10 hook scripts](https://agentrulegen.com/guides/claude-code-hooks-setup) - 10 production-ready hook scripts with full shell code, JSON config, and testing instructions. Covers auto-format, destructive command blocking, file protection, git context loading, and post-compact recovery.
 
 ---
 
