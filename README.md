@@ -46,6 +46,7 @@ Hooks that prevent Claude Code from making unwanted changes.
 - [gstack freeze/guard](https://github.com/garrytan/gstack) - Lock critical files from modification. Uses `PreToolUse` hook definitions in SKILL.md frontmatter (not hooks.json) with real shell scripts (`freeze/bin/check-freeze.sh`). Note: only enforced in Claude Code — generated Codex skill docs are advisory prose only. Found in `freeze/SKILL.md.tmpl` and `guard/SKILL.md.tmpl`. Triggers on: `PreToolUse` (Write/Edit).
 - [Everything Claude Code hook profiles](https://github.com/affaan-m/everything-claude-code) - 26 hook entries across 7 event groups with 27 hook scripts. Three preset safety levels: minimal, standard, strict. Codex-verified counts: 116 skills, 28 agents, 59 commands. Triggers on: `PreToolUse`, `PostToolUse`, and 5 other event types.
 - [Pre-commit hook guard](https://github.com/anthropics/claude-code/tree/main/hooks) - Official example: block commits that skip pre-commit hooks (prevents `--no-verify`). Triggers on: `PreToolUse` (Bash).
+- [isquividet/claude-code-hooks](https://github.com/isquividet/claude-code-hooks) - Refuses destructive shell commands before they run instead of warning after: force-push, hard reset, `git clean -fd`, `rm -rf`, `chmod 777`, `curl | sh`, `DROP TABLE`. Exits 2 so the reason goes back to the model, which then has to find another way. Python standard library only, no dependencies, nothing calls a model. Triggers on: `PreToolUse` (Bash).
 
 ## Monitoring and Observability
 
