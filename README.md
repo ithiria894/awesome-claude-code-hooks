@@ -70,6 +70,7 @@ Hooks that manage what Claude knows across sessions and compactions.
 - [Continuous Claude v3](https://github.com/parcadei/Continuous-Claude-v3) - Context management via hooks that maintain state through ledgers and handoffs. MCP execution without context pollution. Agent orchestration with isolated context windows. 3,619 stars. Triggers on: multiple lifecycle hooks.
 - [Memory injection hook](https://github.com/affaan-m/everything-claude-code) - Inject alerts, briefings, and relevant memories before each message. Scans memory files and surfaces the most relevant context. Found in `hooks/hooks.json`. Triggers on: pre-message.
 - [Founder OS institutional memory](https://github.com/cloudrepo-io/founder-os) - Accumulates learnings from task completions into `.claude/learnings/`. Future sessions automatically reference past lessons. Triggers on: task completion.
+- [agent-signage](https://github.com/hermes-labs-ai/agent-signage) - Injects one measured fact at the moment an agent acts, staying silent otherwise, so context stays low-noise instead of a constant rules dump. Deterministic, zero-LLM. Triggers on: `PreToolUse`.
 
 ## Model Routing and Cost
 
