@@ -84,6 +84,7 @@ Hooks that manage Claude Code session state.
 
 - [Everything Claude Code session persistence](https://github.com/affaan-m/everything-claude-code) - Save and restore session context across restarts. Auto-dumps important state on session end, reloads on next start. Triggers on: `Stop`, session start.
 - [Superpowers session-start](https://github.com/obra/superpowers) - Auto-load project context and active tasks when starting a new session. Found in `hooks/hooks.json`. Triggers on: session start.
+- [docko](https://github.com/4riel/docko) - Workspace ownership protocol for parallel agents: sessions claim writable slots under one workspace root and the deny message names the command that fixes a rejected write. Claims expire via automatic stale recovery. Triggers on: `SessionStart`, `SessionEnd`, `PreToolUse` (Edit|Write), `SubagentStart`.
 
 ## File Organization
 
