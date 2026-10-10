@@ -99,6 +99,7 @@ Hooks that notify you about Claude Code activity.
 - [aily](https://github.com/jiunbae/aily) - Discord notifications with per-tmux-session threads. Each Claude session gets its own Discord thread. 6 stars. Triggers on: `Notification`, `Stop`.
 - [Desktop notification on complete](https://github.com/anthropics/claude-code/tree/main/hooks) - Official example: send system notification when a long-running task completes. Triggers on: `Stop`.
 - [Solopreneur decision logger](https://github.com/pcatattacks/solopreneur-plugin) - Auto-logs every user decision with reasoning when Claude asks a question. Creates an observer protocol for future reference. Triggers on: `PostToolUse` (AskUserQuestion).
+- [Tapproval](https://github.com/marcobelini/tapproval-helper) - Sends each permission prompt to an Apple Watch, marked with one of five risk tiers, and returns the tap as the hook's decision. Approves nothing on its own by default; standard-library Python with a local relay on your own computer, no account and no external server. Triggers on: `PermissionRequest`.
 
 ## Voice and Sound
 
