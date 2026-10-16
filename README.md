@@ -84,6 +84,7 @@ Hooks that manage Claude Code session state.
 
 - [Everything Claude Code session persistence](https://github.com/affaan-m/everything-claude-code) - Save and restore session context across restarts. Auto-dumps important state on session end, reloads on next start. Triggers on: `Stop`, session start.
 - [Superpowers session-start](https://github.com/obra/superpowers) - Auto-load project context and active tasks when starting a new session. Found in `hooks/hooks.json`. Triggers on: session start.
+- [keep-going](https://github.com/ferdousbhai/keep-going) - Blocks the turn from ending when a small reviewer model reads the last assistant message and judges it unfinished, or a question the agent could answer itself, then sends the agent back in with a short fixed nudge. Spends model tokens on every stop by shelling out to your own installed CLI; capped at 100 continuations per turn and fails open. Triggers on: `Stop`.
 
 ## File Organization
 
