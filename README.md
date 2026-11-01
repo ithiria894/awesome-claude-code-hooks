@@ -54,6 +54,7 @@ Hooks that track and visualize Claude Code activity in real-time.
 - [Multi-Agent Observability Dashboard](https://github.com/disler/claude-code-hooks-multi-agent-observability) - Real-time monitoring dashboard for Claude Code agents through hook event tracking. Streams tool usage events to a web UI. 1,289 stars. Triggers on: all hook events.
 - [MadameClaude](https://github.com/williamkapke/MadameClaude) - Monitoring system that captures and streams tool usage events to a web interface in real-time. 21 stars. Triggers on: `PreToolUse`, `PostToolUse`.
 - [ccproxy](https://github.com/starbaser/ccproxy) - Proxy that hooks into Claude Code requests for intelligent model routing, request/response modification, and LangFuse tracking. 189 stars. Triggers on: request-level proxy hooks.
+- [Session Dock](https://github.com/paragpandyareal/session-dock) - Windows desktop dock that shows the live status of every Claude Code session and alerts you when one is waiting for input. The hook forwards each event to the app on 127.0.0.1 and exits within a second. 0 stars. Triggers on: `SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, `Notification`, `Stop`, `SubagentStop`, `SessionEnd`.
 
 ## Code Quality Gates
 
