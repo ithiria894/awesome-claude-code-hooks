@@ -61,6 +61,7 @@ Hooks that enforce code quality standards automatically.
 
 - [Auto-lint on save](https://github.com/affaan-m/everything-claude-code) - Run linter after every file write. Reject changes that introduce lint errors. Found in `hooks/hooks.json`. Triggers on: `PostToolUse` (Write/Edit).
 - [Claude Organize](https://github.com/ramakay/claude-organizer) - AI-powered file organization hook that automatically sorts temporary scripts from permanent docs. Understands content, not just patterns. 61 stars. Triggers on: `PostToolUse` (Write/Edit).
+- [Ponder deliberation hook](https://github.com/Quinnod345/ponder) - Reads `.ponder/*/session.json` to display a live deliberation status line and provides the `/ponder-status` inspector without modifying project files. Triggers on: `session.start`, `turn.complete`.
 
 ## Context and Memory
 
