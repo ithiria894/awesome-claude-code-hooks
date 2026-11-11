@@ -77,6 +77,7 @@ Hooks that optimize model selection and track spending.
 
 - [claude-model-router-hook](https://github.com/tzachbon/claude-model-router-hook) - Auto-switches model tier based on task complexity (e.g., Haiku for simple reads, Opus for complex reasoning). 25 stars. Triggers on: `PreToolUse`.
 - [Cost tracker hook](https://github.com/karanb192/claude-code-hooks) - Tracks token usage and estimated cost per session. Part of a 10-hook collection. Triggers on: `PostToolUse`.
+- [codex-delegation-guard](https://github.com/publicmain/codex-delegation-guard) - Division-of-labour guard between Claude Code and Codex: blocks large Write/Edit changes in git repos until Claude delegates to Codex (official plugin) or records a one-line reason, and re-injects the split criteria after compaction. Triggers on: `PreToolUse`, `SessionStart`, `UserPromptSubmit`.
 
 ## Session Management
 
