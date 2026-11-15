@@ -114,6 +114,7 @@ Hooks that connect Claude Code actions to git operations.
 - [GitButler Claude Code hooks](https://docs.gitbutler.com/features/ai-integration/claude-code-hooks) - Official GitButler integration: PreToolUse creates session-specific git index, PostToolUse stages files, Stop commits to per-session branch under `refs/heads/claude/`. Enables parallel sessions with isolated branches. By Scott Chacon. Triggers on: `PreToolUse`, `PostToolUse`, `Stop`.
 - [Auto-checkpoint on skill completion](https://github.com/pcatattacks/solopreneur-plugin) - Automatically creates a git commit after every skill finishes running. Ensures you can always roll back. Triggers on: skill completion.
 - [Branch-per-task pattern](https://github.com/cloudrepo-io/founder-os) - Auto-create a new branch when starting a task from the queue. Isolates work for clean PR creation. Triggers on: task start.
+- [claude-gh-guard](https://github.com/seuthootDev/claude-gh-guard) - Blocks `git commit`, `git push` and `gh pr create` when the active GitHub account or author email is wrong for the repo, and shows the GitHub identity in the status line. Install via `npx claude-gh-guard init`. Triggers on: `PreToolUse` (Bash).
 
 ## Hook SDKs and Frameworks
 
