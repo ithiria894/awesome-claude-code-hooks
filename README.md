@@ -37,6 +37,7 @@ Hooks that detect and block prompt injection attacks in tool outputs.
 - [rulebricks/claude-code-guardrails](https://github.com/rulebricks/claude-code-guardrails) - Real-time guardrails for Claude Code tool calls. 61 stars. Triggers on: `PreToolUse`, `PostToolUse`.
 - [panuhorsmalahti/claude-code-permissions-hook](https://github.com/panuhorsmalahti/claude-code-permissions-hook) - Rust-based granular permission controls via TOML config. Allow/deny rules with regex pattern matching, exclude patterns for edge cases, and JSON audit logging. Workaround for current Claude Code permission limitations. Triggers on: `PreToolUse`.
 - [liberzon/claude-hooks](https://github.com/liberzon/claude-hooks) - Smart PreToolUse hook that decomposes compound bash commands (`&&`, `||`, `;`, `|`, `$()`, newlines) into individual sub-commands and checks each against your allow/deny patterns. Loads permissions from all settings layers (global + project + local). Triggers on: `PreToolUse` (Bash).
+- [human-led-gate](https://github.com/lijizhi/human-led-gate) - `PreToolUse` gate that denies `Edit`/`Write` calls outside a human-approved path list, with that list kept in `.humanled/approvals.json` rather than in editable agent settings; also blocks secrets in shell commands, force pushes and `curl | sh`. Bypassable by a shell command that constructs a protected path at runtime. Triggers on: `PreToolUse`.
 
 ## Safety and Protection
 
