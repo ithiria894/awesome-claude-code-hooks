@@ -37,6 +37,7 @@ Hooks that detect and block prompt injection attacks in tool outputs.
 - [rulebricks/claude-code-guardrails](https://github.com/rulebricks/claude-code-guardrails) - Real-time guardrails for Claude Code tool calls. 61 stars. Triggers on: `PreToolUse`, `PostToolUse`.
 - [panuhorsmalahti/claude-code-permissions-hook](https://github.com/panuhorsmalahti/claude-code-permissions-hook) - Rust-based granular permission controls via TOML config. Allow/deny rules with regex pattern matching, exclude patterns for edge cases, and JSON audit logging. Workaround for current Claude Code permission limitations. Triggers on: `PreToolUse`.
 - [liberzon/claude-hooks](https://github.com/liberzon/claude-hooks) - Smart PreToolUse hook that decomposes compound bash commands (`&&`, `||`, `;`, `|`, `$()`, newlines) into individual sub-commands and checks each against your allow/deny patterns. Loads permissions from all settings layers (global + project + local). Triggers on: `PreToolUse` (Bash).
+- [whoami-guard](https://github.com/ChrystianSchutz/whoami-guard) - Blocks tool calls that would send the user's own e-mail address or name to outside services (curl/wget, WebFetch, MCP calls, scripts the agent writes), including URL, base64 and HTML-entity encoded forms; also denies commits with an AI co-author trailer. Standard library only, sub-millisecond. Best-effort: an address a script reads at run time and sends through a library call is out of scope. Triggers on: `PreToolUse`.
 
 ## Safety and Protection
 
